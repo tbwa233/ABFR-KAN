@@ -1,2 +1,2 @@
-# RandFR-KAN
-Repository for the project "RandFR-KAN: Improved brain diseases diagnosis with randomized brain function representation and a KAN-based vision transformer"
+# IBFR-KAN
+Repository for the project "IBFR-KAN: Improved brain disease diagnosis via iterative brain function representation and a KAN-based vision transformer"
