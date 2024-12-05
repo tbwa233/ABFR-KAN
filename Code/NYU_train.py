@@ -23,10 +23,6 @@ from model.NYU_ViT_RandomFR import ViT
 # from model.NYU_ViT_KAN_KAN import ViT
 # from model.NYU_ViT_KAN_MLP import ViT
 # from model.NYU_ViT_MLP_KAN import ViT
-# from model.NYU_DeiT_MLP_MLP import DeiT
-# from model.NYU_DeiT_KAN_KAN import DeiT
-# from model.NYU_DeiT_KAN_MLP import DeiT
-# from model.NYU_DeiT_MLP_KAN import DeiT
 
 
 def open_log(log_path, name='train'):
@@ -87,15 +83,6 @@ def train(i_fold, DEVICE):
                 mlp_dim = 16,
                 dropout = 0,
                 emb_dropout = 0).to(DEVICE)
-  
-    """model = DeiT(num_classes=2,
-                 dim=112,
-                 depth=3,
-                 heads=2,
-                 mlp_dim=16,
-                 pool='cls',
-                 dropout=0.,
-                 emb_dropout=0.).to(DEVICE)"""
 
     lossfunction = nn.CrossEntropyLoss(reduction='mean')
 
