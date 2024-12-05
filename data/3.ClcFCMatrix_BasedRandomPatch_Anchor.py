@@ -3,6 +3,7 @@ Note: I did not write this code. This code was made publically available at http
 It is used to prepare data for use with the models.
 - Tyler
 """
+
 import os
 import SimpleITK as sitk
 from scipy import io
