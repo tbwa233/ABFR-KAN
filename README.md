@@ -60,4 +60,4 @@ derivative: func_prepoc
 
 Patients are selected from the NYU site with IDs from 0050954 to 0051156.
 
-If you're unable to get the raw data downloaded, I have provided some zip files in the Code/data folder that will allow you to train the model. Simply unzip the files, and make sure the paths are properly set in the NYU_dataset.py file.
+If you're unable to get the raw data downloaded, I have provided a zip file (https://www.dropbox.com/scl/fi/jkygnqcjv99tnbgtzel1g/fcmatrices_and_subjectwisepositions.zip?rlkey=beeyk6tvt6aa5umbvcko16oat&st=csbgxy1m&dl=0) that you can place in the Code/data folder that will allow you to train the model. Simply unzip the files, and make sure the paths are properly set in the NYU_dataset.py file.
