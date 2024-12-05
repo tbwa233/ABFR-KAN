@@ -1,3 +1,4 @@
+# I wrote this
 import os
 import SimpleITK as sitk
 import numpy as np
