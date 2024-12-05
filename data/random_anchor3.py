@@ -1,3 +1,9 @@
+"""
+Note: This file is almost identical to the '3.ClcFCMatrix_BasedRandomPatch_Anchor.py' file provided by https://github.com/mjliu2020/RandomFR/.
+The only reason I have this file here is because of convenience, because it matches the file names and stuff from the random_anchor1 and 
+random_anchor2 files I wrote.
+"""
+
 import os
 import SimpleITK as sitk
 from scipy import io
