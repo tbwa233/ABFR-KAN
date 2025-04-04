@@ -1,5 +1,7 @@
 # ABFR-KAN
-Repository for the project "Improving brain disorder diagnosis with advanced brain function representation and Kolmogorov-Arnold Networks"
+This repository contains the implementation of ABFR-KAN. The associated publication for this project is listed below:
+
+["Improving brain disorder diagnosis with advanced brain function representation and Kolmogorov-Arnold Networks,"](https://openreview.net/forum?id=YmUDkDQhCW) by Tyler Ward and Abdullahh-Al-Zubaer Imran. In [MIDL](https://2025.midl.io/), 2025.
 
 # How to Use
 There are a lot of different experiments that can be run from the code in this repository. Let's start by discussing the baseline. In order to prepare and train the baseline model, follow the following steps:
