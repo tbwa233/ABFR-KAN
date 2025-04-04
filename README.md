@@ -3,7 +3,7 @@ This repository contains the implementation of ABFR-KAN. The associated publicat
 
 ["Improving brain disorder diagnosis with advanced brain function representation and Kolmogorov-Arnold Networks,"](https://openreview.net/forum?id=YmUDkDQhCW) by Tyler Ward and Abdullahh-Al-Zubaer Imran. In [MIDL](https://2025.midl.io/), 2025.
 
-ABFR-KAN implements a novel deep learning pipeline for diagnosing autism spectrum disorder from rs-fMRI data. This pipeline uses randomized anchor patch selection and iterative patch sampling to create individualized, unbiased representations of brain functional connectivity. Additionally, we introduce a transformer-based classifier with Kolmogorov-Arnold Networks (KANs) replacing traditional MLP layers for better function approximation.
+ABFR-KAN implements a novel deep learning pipeline for diagnosing autism spectrum disorder (ASD) from resting state functional magnetic resonance imaging (rs-fMRI) data. This pipeline uses randomized anchor patch selection and iterative patch sampling to create individualized, unbiased representations of brain functional connectivity. Additionally, we introduce a transformer-based classifier with Kolmogorov-Arnold Networks (KANs) replacing traditional MLP layers for better function approximation.
 
 # How to Use
 There are a lot of different experiments that can be run from the code in this repository. Let's start by discussing the baseline. In order to prepare and train the baseline model, follow the following steps:
