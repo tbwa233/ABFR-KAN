@@ -9,6 +9,9 @@ ABFR-KAN implements a novel deep learning pipeline for diagnosing autism spectru
 Quantifying functional connectivity (FC), a vital metric for the diagnosis of various brain disorders traditionally relies on the use of a pre-defined brain atlas. However, using such atlases can lead to issues regarding selection bias and lack of regard for specificity. Addressing
 this, we propose a novel transformer-based classification network (AFBR-KAN) with effective brain function representation to aid in diagnosing autism spectrum disorder (ASD). AFBR-KAN leverages Kolmogorov-Arnold Network (KAN) blocks replacing traditional multi-layer perceptron (MLP) components. Thorough experimentation reveals the effectiveness of AFBR-KAN in improving the diagnosis of ASD under various configurations of the model architecture.
 
+## Model
+![Figure](https://github.com/tbwa233/ABFR-KAN/blob/main/images/abfrkanarch6.png)
+
 # How to Use
 There are a lot of different experiments that can be run from the code in this repository. Let's start by discussing the baseline. In order to prepare and train the baseline model, follow the following steps:
 
