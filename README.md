@@ -14,7 +14,7 @@ Quantifying functional connectivity (FC), a vital metric for the diagnosis of va
 Below, we highlight key components of the ABFR-KAN pipeline and their benefits.
 
 ### Random Anchor Selection
-ABFR-KAN avoids structural bias by randomly selecting anchor patches from the gray matter region rather than using fixed grids or atlas-based regions of interest (ROIs). This randomization enhances individual specificity and ensures that functional connectivity (FC) representations are not constrained by pre-defined anatomical assumptions. The result is a more flexible and generalizable model that captures meaningful subject-specific variation in brain function.
+ABFR-KAN avoids structural bias by randomly selecting anchor patches from the gray matter region rather than using fixed grids or atlas-based regions of interest (ROIs). This randomization enhances individual specificity and ensures that FC representations are not constrained by pre-defined anatomical assumptions. The result is a more flexible and generalizable model that captures meaningful subject-specific variation in brain function.
 
 ### Iterative Patch Sampling
 To capture rich multi-scale functional features, ABFR-KAN employs an iterative sampling strategy. Patches are repeatedly drawn from gray matter using varying sizes, and their FC with anchor patches is computed and aggregated. This process improves anatomical coverage and reduces the impact of any single patch sampling configuration, producing more robust and informative FC representations.
