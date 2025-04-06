@@ -86,3 +86,8 @@ derivative: func_prepoc
 Patients are selected from the NYU site with IDs from 0050954 to 0051156.
 
 If you're unable to get the raw data downloaded, I have provided a zip file (https://www.dropbox.com/scl/fi/jkygnqcjv99tnbgtzel1g/fcmatrices_and_subjectwisepositions.zip?rlkey=beeyk6tvt6aa5umbvcko16oat&st=csbgxy1m&dl=0) that you can place in the Code/data folder that will allow you to train the model. Simply unzip the files, and make sure the paths are properly set in the NYU_dataset.py file.
+
+## Acknowledgements
+This project was built off the backbone of the [RandomFR](https://github.com/mjliu2020/RandomFR) repository provided by Mengjun Liu, Huifeng Zhang, Mianxin Liu, Dongdong Chen, Zixu Zhuang, and Xin Wang. We greatly thank these authors for open-sourcing their project. We highly recommend checking out their respository, as well as their [paper](https://ieeexplore.ieee.org/document/10440630) published in [IEEE T-MI](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=42).
+
+Additionally, we would like to thank the authors of the [Vision-KAN](https://github.com/chenziwenhaoshuai/Vision-KAN) and [FasterKAN](https://github.com/AthanasiosDelis/faster-kan) repositories, whose work was greatly beneficial for providing a guideline for proper KAN integration.
