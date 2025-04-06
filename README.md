@@ -6,11 +6,21 @@ This repository contains the implementation of ABFR-KAN. The associated publicat
 ABFR-KAN implements a novel deep learning pipeline for diagnosing autism spectrum disorder (ASD) from resting state functional magnetic resonance imaging (rs-fMRI) data. This pipeline uses randomized anchor patch selection and iterative patch sampling to create individualized, unbiased representations of brain functional connectivity. Additionally, we introduce a transformer-based classifier with Kolmogorov-Arnold Networks (KANs) replacing traditional MLP layers for better function approximation.
 
 ## Abstract
-Quantifying functional connectivity (FC), a vital metric for the diagnosis of various brain disorders traditionally relies on the use of a pre-defined brain atlas. However, using such atlases can lead to issues regarding selection bias and lack of regard for specificity. Addressing
-this, we propose a novel transformer-based classification network (AFBR-KAN) with effective brain function representation to aid in diagnosing autism spectrum disorder (ASD). AFBR-KAN leverages Kolmogorov-Arnold Network (KAN) blocks replacing traditional multi-layer perceptron (MLP) components. Thorough experimentation reveals the effectiveness of AFBR-KAN in improving the diagnosis of ASD under various configurations of the model architecture.
+Quantifying functional connectivity (FC), a vital metric for the diagnosis of various brain disorders traditionally relies on the use of a pre-defined brain atlas. However, using such atlases can lead to issues regarding selection bias and lack of regard for specificity. Addressing this, we propose a novel transformer-based classification network (AFBR-KAN) with effective brain function representation to aid in diagnosing autism spectrum disorder (ASD). AFBR-KAN leverages Kolmogorov-Arnold Network (KAN) blocks replacing traditional multi-layer perceptron (MLP) components. Thorough experimentation reveals the effectiveness of AFBR-KAN in improving the diagnosis of ASD under various configurations of the model architecture.
 
 ## Model
 ![Figure](https://github.com/tbwa233/ABFR-KAN/blob/main/images/abfrkanarch6.png)
+
+Below, we highlight key components of the ABFR-KAN pipeline and their benefits.
+
+### Random Anchor Selection
+ABFR-KAN avoids structural bias by randomly selecting anchor patches from the gray matter region rather than using fixed grids or atlas-based regions of interest (ROIs). This randomization enhances individual specificity and ensures that functional connectivity (FC) representations are not constrained by pre-defined anatomical assumptions. The result is a more flexible and generalizable model that captures meaningful subject-specific variation in brain function.
+
+### Iterative Patch Sampling
+To capture rich multi-scale functional features, ABFR-KAN employs an iterative sampling strategy. Patches are repeatedly drawn from gray matter using varying sizes, and their FC with anchor patches is computed and aggregated. This process improves anatomical coverage and reduces the impact of any single patch sampling configuration, producing more robust and informative FC representations.
+
+### Kolmogorov-Arnold Networks
+Traditional transformer networks rely on MLPs for encoding and classification. ABFR-KAN replaces these with Kolmogorov-Arnold Networks—neural layers that use learnable spline-based activation functions on edges. Inspired by the Kolmogorov-Arnold representation theorem, KANs offer enhanced expressiveness, faster convergence, and better interpretability. Their ability to model complex, high-dimensional relationships makes them especially well-suited for analyzing the subtle patterns involved in diagnosing conditions like ASD.
 
 # How to Use
 There are a lot of different experiments that can be run from the code in this repository. Let's start by discussing the baseline. In order to prepare and train the baseline model, follow the following steps:
