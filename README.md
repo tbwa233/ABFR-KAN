@@ -22,6 +22,10 @@ To capture rich multi-scale functional features, ABFR-KAN employs an iterative s
 ### Kolmogorov-Arnold Networks
 Traditional transformer networks rely on MLPs for encoding and classification. ABFR-KAN replaces these with Kolmogorov-Arnold Networks—neural layers that use learnable spline-based activation functions on edges. Inspired by the Kolmogorov-Arnold representation theorem, KANs offer enhanced expressiveness, faster convergence, and better interpretability. Their ability to model complex, high-dimensional relationships makes them especially well-suited for analyzing the subtle patterns involved in diagnosing conditions like ASD.
 
+## Results
+A brief summary of our results are shown below. Our ABFR-KAN model is evaluated under various different configurations of KANs and MLPs. In the table, the best scores are bolded and the second-best scores are underlined.
+![Results](https://github.com/tbwa233/ABFR-KAN/blob/main/images/abfrkanresults.png)
+
 # How to Use
 There are a lot of different experiments that can be run from the code in this repository. Let's start by discussing the baseline. In order to prepare and train the baseline model, follow the following steps:
 
