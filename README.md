@@ -91,3 +91,16 @@ If you're unable to get the raw data downloaded, I have provided a zip file (htt
 This project was built off the backbone of the [RandomFR](https://github.com/mjliu2020/RandomFR) repository provided by Mengjun Liu, Huifeng Zhang, Mianxin Liu, Dongdong Chen, Zixu Zhuang, and Xin Wang. We greatly thank these authors for open-sourcing their project. We highly recommend checking out their respository, as well as their [paper](https://ieeexplore.ieee.org/document/10440630) published in [IEEE T-MI](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=42).
 
 Additionally, we would like to thank the authors of the [Vision-KAN](https://github.com/chenziwenhaoshuai/Vision-KAN) and [FasterKAN](https://github.com/AthanasiosDelis/faster-kan) repositories, whose work was greatly beneficial for providing a guideline for proper KAN integration.
+
+## Citation
+If you find this repo or the paper useful, please cite:
+
+**arXiv preprint**
+```
+@article{ward2025improving,
+  title={Improving Brain Disorder Diagnosis with Advanced Brain Function Representation and Kolmogorov-Arnold Networks},
+  author={Ward, Tyler and Imran, Abdullah-Al-Zubaer},
+  journal={arXiv preprint arXiv:2504.03923},
+  year={2025}
+}
+```
