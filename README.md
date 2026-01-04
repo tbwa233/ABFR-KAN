@@ -1,4 +1,4 @@
-<span style="color: red;">Update: This repository is currently being updated with code and instructions for a new version of ABFR-KAN. The instructions below can be used to run the initial ABFR-KAN code, in the ABFR-KAnv1 folder.</span>
+Update: This repository is currently being updated with code and instructions for a new version of ABFR-KAN. The instructions below can be used to run the initial ABFR-KAN code, in the ABFR-KANv1 folder.
 
 # ABFR-KAN
 This repository contains the implementation of ABFR-KAN. The associated publication for this project is listed below:
