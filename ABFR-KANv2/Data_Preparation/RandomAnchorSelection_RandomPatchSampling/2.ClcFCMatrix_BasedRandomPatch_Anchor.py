@@ -89,12 +89,13 @@ def calc_mean_matrix(fmri_path, GMmask_path, anchor_arr_3d):
 
 
 result_dir = './Result_FCandSignal_BasedPatch_Anchor/NYU_PatchSize8_112AnchorNum'
-image_dir = '/localdisk1/Datasets/ABIDE/Sites/UM'
-mask_dir = '/localdisk0/ABFR-KAN/Data_Preparation/template'
+image_dir = '/path/to/image/data' # Follow the instructions in README.md to download the image data
+mask_dir = '/path/to/Data_Preparation/template' # Update path to your own template directory
 name_list = os.listdir(f'{image_dir}')
 name_list.sort()
 
-anchor_arr_3 = sitk.GetArrayFromImage(sitk.ReadImage('/localdisk0/ABFR-KAN/Data_Preparation/RandomAnchorSelection_RandomPatchSampling/AnchorMask/RandomAnchorNewFixedCoordinateWithGMmask_forAnchorSize32/AnchorPatch_mask_150AnchorNum_617361.nii'))
+# IMPORTANT NOTE: Update this path
+anchor_arr_3 = sitk.GetArrayFromImage(sitk.ReadImage('/path/to/Data_Preparation/RandomAnchorSelection_RandomPatchSampling/AnchorMask/RandomAnchorNewFixedCoordinateWithGMmask_forAnchorSize32/AnchorPatch_mask_150AnchorNum_617361.nii'))
 
 sub = 0
 for name in name_list:
