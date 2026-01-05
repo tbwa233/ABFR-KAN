@@ -9,7 +9,8 @@ tl_x = np.load(f'{point_path}/tl_x.npy').squeeze()
 tl_y = np.load(f'{point_path}/tl_y.npy').squeeze()
 tl_z = np.load(f'{point_path}/tl_z.npy').squeeze()
 
-GMmask = sitk.GetArrayFromImage(sitk.ReadImage('/localdisk0/ABFR-KAN/Data_Preparation/template/GreyMatterMask_181217181.nii.gz'))
+# IMPORTANT NOTE: Here, you will need to update the path to your own GreyMatterMask_181217181.nii.gz file
+GMmask = sitk.GetArrayFromImage(sitk.ReadImage('/path/to/Data_Preparation/template/GreyMatterMask_181217181.nii.gz'))
 
 wholefinal = np.zeros((181, 217, 181))
 label = 1
@@ -49,7 +50,8 @@ np.save(f'{anchor_path}/AnchorPatch_mask.npy', wholefinal)
 df = pd.DataFrame(label_index_array)
 df.to_csv(f'{anchor_path}/AnchorPatch_index.csv')
 
-origin_image = sitk.ReadImage('/localdisk0/ABFR-KAN/Data_Preparation/template/ch2bet.nii')
+# IMPORTANT NOTE: Here, you will need to update the path to your own ch2bet.nii file
+origin_image = sitk.ReadImage('/path/to/Data_Preparation/template/ch2bet.nii')
 whole_image = sitk.GetImageFromArray(wholefinal)
 whole_image.SetDirection(origin_image.GetDirection())
 whole_image.SetOrigin(origin_image.GetOrigin())
@@ -58,7 +60,8 @@ whole_image.SetSpacing(origin_image.GetSpacing())
 sitk.WriteImage(whole_image, f'{anchor_path}/AnchorPatch_mask_181217181.nii')
 
 volume = sitk.ReadImage(f'{anchor_path}/AnchorPatch_mask_181217181.nii')
-reference_volume = sitk.ReadImage(f'/localdisk0/ABFR-KAN/Data_Preparation/template/BrainMask_05_617361.nii')
+# IMPORTANT NOTE: Here, you will need to update the path to your own BrainMask_05_617361.nii file
+reference_volume = sitk.ReadImage(f'/path/to/Data_Preparation/template/BrainMask_05_617361.nii')
 resliced_mask = sitk.Resample(volume, referenceImage=reference_volume,
                               transform = sitk.Transform(),
                               interpolator = sitk.sitkNearestNeighbor,
