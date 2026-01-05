@@ -102,7 +102,7 @@ If you find this repo or the paper useful, please cite:
 ```
 @article{ward2026abfr,
   title={ABFR-KAN: Kolmogorov-Arnold Networks for Functional Brain Analysis},
-  author={Ward, Tyler and Imran, Abdullah-Al-Zubaer},
+  author={Ward, Tyler and Imran, Abdullah},
   journal={arXiv preprint arXiv:2601.00416},
   year={2026}
 }
@@ -113,7 +113,7 @@ and
 ```
 @inproceedings{ward2025improving,
   title={Improving brain disorder diagnosis with advanced brain function representation and Kolmogorov-Arnold Networks},
-  author={Ward, Tyler and Imran, Abdullah Al Zubaer},
+  author={Ward, Tyler and Imran, Abdullah-Al-Zubaer},
   booktitle={Medical Imaging with Deep Learning},
   year={2025}
 }
