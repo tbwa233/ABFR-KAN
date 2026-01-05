@@ -82,15 +82,15 @@ def calc_mean_matrix(fmri_path, GMmask_path, anchor_arr_3d):
     anchorresult = np.asarray(anchorresult, np.float64)
     result = np.asarray(result, np.float64)
     position_add_result = np.asarray(position_add_result)
-    # print('position_add_result.shape:', position_add_result.shape)
+    # print('position_add_result.shape:', position_add_result.shape)localdisk0/ABFR-KAN
     cc_matrix = np.corrcoef(result, anchorresult)
     # print(cc_matrix.shape)
     return np.nan_to_num(cc_matrix), position_add_result
 
 
 result_dir = './Result_FCandSignal_BasedPatch_Anchor/NYU_PatchSize8_112AnchorNum'
-image_dir = '/localdisk1/Datasets/ABIDE/Sites/UM'
-mask_dir = '/localdisk0/ABFR-KAN/Data_Preparation/template'
+image_dir = '/path/to/image/data' # Follow the instructions in README.md to download the image data
+mask_dir = '/path/to/Data_Preparation/template' # Update path to your own template directory
 name_list = os.listdir(f'{image_dir}')
 name_list.sort()
 
