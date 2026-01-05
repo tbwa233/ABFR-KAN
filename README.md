@@ -99,17 +99,19 @@ Additionally, we would like to thank the authors of the [Vision-KAN](https://git
 ## Citation
 If you find this repo or the paper useful, please cite:
 
+```
 @article{ward2026abfr,
   title={ABFR-KAN: Kolmogorov-Arnold Networks for Functional Brain Analysis},
   author={Ward, Tyler and Imran, Abdullah-Al-Zubaer},
   journal={arXiv preprint arXiv:2601.00416},
   year={2026}
 }
+```
 
 and
 
 ```
-@inproceedings{wardimproving,
+@inproceedings{ward2025improving,
   title={Improving brain disorder diagnosis with advanced brain function representation and Kolmogorov-Arnold Networks},
   author={Ward, Tyler and Imran, Abdullah Al Zubaer},
   booktitle={Medical Imaging with Deep Learning},
