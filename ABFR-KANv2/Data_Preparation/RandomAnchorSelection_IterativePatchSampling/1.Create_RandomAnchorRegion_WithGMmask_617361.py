@@ -5,7 +5,7 @@ import pandas as pd
 import random
 
 # Load the gray matter mask
-GMmask = sitk.GetArrayFromImage(sitk.ReadImage('/localdisk0/ABFR-KAN/Data_Preparation/template/GreyMatterMask_181217181.nii.gz'))
+GMmask = sitk.GetArrayFromImage(sitk.ReadImage('/path/to/Data_Preparation/template/GreyMatterMask_181217181.nii.gz')) # Update path to your own GreyMatterMask_181217181.nii.gz file
 
 # Initialize variables
 wholefinal = np.zeros((181, 217, 181))
@@ -50,7 +50,7 @@ df = pd.DataFrame(label_index_array)
 df.to_csv(f'{anchor_path}/AnchorPatch_index.csv')
 
 # Save the anchor patch mask as a .nii file
-origin_image = sitk.ReadImage('/localdisk0/ABFR-KAN/Data_Preparation/template/ch2bet.nii')
+origin_image = sitk.ReadImage('/path/to/Data_Preparation/template/ch2bet.nii') # Update path to your own ch2bet.nii file
 whole_image = sitk.GetImageFromArray(wholefinal)
 whole_image.SetDirection(origin_image.GetDirection())
 whole_image.SetOrigin(origin_image.GetOrigin())
@@ -60,10 +60,11 @@ sitk.WriteImage(whole_image, f'{anchor_path}/AnchorPatch_mask_181217181.nii')
 
 # Reslice the anchor patch mask to match a reference volume
 volume = sitk.ReadImage(f'{anchor_path}/AnchorPatch_mask_181217181.nii')
-reference_volume = sitk.ReadImage(f'/localdisk0/ABFR-KAN/Data_Preparation/template/BrainMask_05_617361.nii')
+reference_volume = sitk.ReadImage(f'/path/to/Data_Preparation/template/BrainMask_05_617361.nii') # Update path to your own BrainMask_05_617361.nii file
 resliced_mask = sitk.Resample(volume, referenceImage=reference_volume,
                               transform=sitk.Transform(),
                               interpolator=sitk.sitkNearestNeighbor,
                               defaultPixelValue=0.0)
 
 sitk.WriteImage(resliced_mask, f'{anchor_path}/AnchorPatch_mask_{label-1}AnchorNum_617361.nii')
+
