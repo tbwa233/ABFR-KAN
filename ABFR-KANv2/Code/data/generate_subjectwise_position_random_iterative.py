@@ -4,8 +4,11 @@ import pandas as pd
 from scipy.io import loadmat
 import numpy as np
 
-base_dir = '/localdisk0/ABFR-KAN/Data_Preparation/4_RandomAnchorSelection_IterativePatchSampling/Result_FCandSignal_BasedPatch_Anchor/NewUM_PatchSize_Variations'
+# Update the path below to point to the appropriate directory in your setup
+base_dir = '/path/to/Data_Preparation/4_RandomAnchorSelection_IterativePatchSampling/Result_FCandSignal_BasedPatch_Anchor/NewUM_PatchSize_Variations'
 iterations = [f'Iteration_{i}' for i in range(1, 4)]
+"""In the line below, make sure the .csv file corresponds with the ABIDE site you want to train on.
+We provide .csv files for the NYU and UM sites, but other sites can be used so long as you provide a .csv file for them."""
 data_fold = pd.read_csv(f'./UM110.csv', skip_blank_lines=True)
 
 os.makedirs('subjectwise_position_random_iterative', exist_ok=True)
@@ -23,10 +26,10 @@ for index, row in data_fold.iterrows():
     for iteration in iterations:
         FCMatrix_path = glob(
             os.path.join(base_dir, iteration, 'FCMatrix', f'UM_1_00{name}_func_preproc.mat')
-        )
+        ) # Make sure the .mat filenames match your expected files
         Posi_Signal_path = glob(
             os.path.join(base_dir, iteration, 'Position_and_ROISignals', f'UM_1_00{name}_func_preproc.mat')
-        )
+        ) # Make sure the .mat filenames match your expected files
 
         if not FCMatrix_path or not Posi_Signal_path:
             print(f"Missing data for subject {name} in {iteration}")
