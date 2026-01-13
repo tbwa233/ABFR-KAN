@@ -77,7 +77,7 @@ num_iterations = 3  # Number of sampling iterations
 patch_size_variations = [8, 12, 16]  # Vary the patch sizes. These can be any value (within reason, obviously)
 
 result_dir = './Result_FCandSignal_BasedPatch_Anchor/NewUM_PatchSize_Variations'
-image_dir = '/localdisk1/Datasets/ABIDE/Sites/UM'
+image_dir = '/path/to/image/data' # Follow the instructions in README.md to download the image data
 mask_dir = '/path/to/Data_Preparation/template' # Update path to your own template file
 name_list = os.listdir(f'{image_dir}')
 name_list.sort()
@@ -145,4 +145,5 @@ os.makedirs(final_result_dir, exist_ok=True)
 io.savemat(os.path.join(final_result_dir, 'Aggregated_FCMatrix.mat'), {'aggregated_fc_matrix': aggregated_fc_matrix})
 io.savemat(os.path.join(final_result_dir, 'Aggregated_Position_Results.mat'),
            {'aggregated_position_results': aggregated_position_results})
+
 
