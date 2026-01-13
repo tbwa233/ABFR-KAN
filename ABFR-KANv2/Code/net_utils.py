@@ -4,7 +4,6 @@ import torch.nn.functional as F
 import numpy as np
 from sklearn.metrics import accuracy_score, roc_auc_score, f1_score, recall_score, precision_score, confusion_matrix
 
-
 def spe(confusion_matrix):
 
     FP = confusion_matrix.sum(axis=0) - np.diag(confusion_matrix)
@@ -17,7 +16,6 @@ def spe(confusion_matrix):
     TN = TN.astype(float)
 
     return np.average(TN/(TN+FP)), np.average(TP/(TP+FP))
-
 
 def train_epoch(model, loader, device, train_optimizer, lossfunction):
 
@@ -99,7 +97,7 @@ def val_epoch(model, loader, device, lossfunction, return_logits=False):
         score_acc = accuracy_score(targets, preds)
 
         # ------------------------------
-        # ✅ NaN-safe AUC computation
+        # NaN-safe AUC computation
         # ------------------------------
         if np.isnan(preds_score).any():
             print("NaNs found in preds_score during validation – skipping AUC for this epoch.")
