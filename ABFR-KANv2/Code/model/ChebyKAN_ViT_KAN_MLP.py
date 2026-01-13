@@ -5,13 +5,11 @@ from einops.layers.torch import Rearrange
 from .NYU_TopK import TopKPooling
 from ChebyKANLayer import ChebyKANLayer
 
-
 # ----------------------------
 # Helpers
 # ----------------------------
 def pair(t):
     return t if isinstance(t, tuple) else (t, t)
-
 
 # ----------------------------
 # PreNorm
@@ -24,7 +22,6 @@ class PreNorm(nn.Module):
 
     def forward(self, x, **kwargs):
         return self.fn(self.norm(x), **kwargs)
-
 
 # ----------------------------
 # Attention
@@ -67,9 +64,8 @@ class Attention(nn.Module):
         out = rearrange(out, "b h n d -> b n (h d)")
         return self.to_out(out)
 
-
 # ----------------------------
-# ChebyKAN FeedForward (FFN) for Encoder Only
+# ChebyKAN FeedForward for Encoder Only
 # ----------------------------
 class ChebyKANFeedForward(nn.Module):
     def __init__(self, dim, hidden_dim, degree=4):
@@ -92,7 +88,6 @@ class ChebyKANFeedForward(nn.Module):
         x = self.norm2(x)
 
         return x.reshape(b, n, -1)
-
 
 # ----------------------------
 # Transformer Encoder
@@ -119,9 +114,8 @@ class Transformer(nn.Module):
             x = ff(x) + x
         return x
 
-
 # ----------------------------
-# Standard MLP Classification Head (NOT ChebyKAN)
+# Standard MLP Classification Head
 # ----------------------------
 class MLPHead(nn.Module):
     def __init__(self, dim, num_classes):
@@ -133,7 +127,6 @@ class MLPHead(nn.Module):
 
     def forward(self, x):
         return self.layers(x)
-
 
 # ----------------------------
 # ViT with ChebyKAN Only in Encoder FFNs
