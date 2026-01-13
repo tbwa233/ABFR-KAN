@@ -1,4 +1,3 @@
-# cheby_head.py (or inline in your ViT file)
 import torch
 import torch.nn as nn
 from ChebyKANLayer import ChebyKANLayer
