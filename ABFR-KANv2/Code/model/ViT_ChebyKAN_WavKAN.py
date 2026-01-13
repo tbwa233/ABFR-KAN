@@ -5,13 +5,11 @@ from .NYU_TopK import TopKPooling
 from wavkan import KAN as WavKAN
 from ChebyKANLayer import ChebyKANLayer
 
-
 # ----------------------------
 # Helpers
 # ----------------------------
 def pair(t):
     return t if isinstance(t, tuple) else (t, t)
-
 
 # ----------------------------
 # PreNorm
@@ -24,7 +22,6 @@ class PreNorm(nn.Module):
 
     def forward(self, x, **kwargs):
         return self.fn(self.norm(x), **kwargs)
-
 
 # ----------------------------
 # Attention
@@ -68,9 +65,8 @@ class Attention(nn.Module):
 
         return self.to_out(out)
 
-
 # ----------------------------
-# ChebyKAN FeedForward (Encoder FFN)
+# ChebyKAN FeedForward
 # ----------------------------
 class ChebyKANFeedForward(nn.Module):
     def __init__(self, dim, hidden_dim, degree=4):
@@ -94,7 +90,6 @@ class ChebyKANFeedForward(nn.Module):
 
         return x.reshape(b, n, -1)
 
-
 # ----------------------------
 # Transformer (ChebyKAN FFN)
 # ----------------------------
@@ -116,7 +111,6 @@ class Transformer(nn.Module):
             x = ff(x) + x
         return x
 
-
 # ----------------------------
 # WavKAN Classification Head
 # ----------------------------
@@ -132,7 +126,6 @@ class WavKANHead(nn.Module):
         x = x.reshape(b, -1)  # ensure 2D
         x = self.kan(x)
         return x
-
 
 # ----------------------------
 # Hybrid ViT
