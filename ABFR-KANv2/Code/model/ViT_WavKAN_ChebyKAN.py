@@ -5,7 +5,6 @@ from .NYU_TopK import TopKPooling
 from wavkan import KAN as WavKAN
 from .cheby_head import ChebyKANHead
 
-
 # --------- helpers ----------
 def pair(t):
     return t if isinstance(t, tuple) else (t, t)
@@ -20,7 +19,6 @@ class PreNorm(nn.Module):
     def forward(self, x, **kwargs):
         return self.fn(self.norm(x), **kwargs)
 
-
 # --------- WavKAN FFN in encoder ----------
 class KANFeedForward(nn.Module):
     def __init__(self, dim, hidden_dim):
@@ -32,7 +30,6 @@ class KANFeedForward(nn.Module):
         x = x.reshape(-1, d)
         x = self.kan(x)
         return x.reshape(b, n, -1)
-
 
 class Attention(nn.Module):
     def __init__(self, dim, heads=8, dim_head=64, dropout=0.):
@@ -71,7 +68,6 @@ class Attention(nn.Module):
         out = rearrange(out, "b h n d -> b n (h d)")
         return self.to_out(out)
 
-
 class Transformer(nn.Module):
     def __init__(self, dim, depth, heads, dim_head, mlp_dim, dropout=0.):
         super().__init__()
@@ -91,7 +87,6 @@ class Transformer(nn.Module):
             x = attn(x) + x
             x = ff(x) + x
         return x
-
 
 class ViT(nn.Module):
     def __init__(
@@ -116,8 +111,6 @@ class ViT(nn.Module):
         self.topk = TopKPooling(in_channels=112, ratio=0.8)
         self.pos_project = nn.Linear(3, dim)
 
-        # you have cls_token & pos_embedding in original, but they weren't really used;
-        # keeping cls_token for compatibility if you want to add it later
         self.cls_token = nn.Parameter(torch.randn(1, 1, dim))
         self.dropout = nn.Dropout(emb_dropout)
 
@@ -126,7 +119,6 @@ class ViT(nn.Module):
         self.pool = pool
         self.to_latent = nn.Identity()
 
-        # ---- ChebyKAN head instead of WavKAN head ----
         self.mlp_head = ChebyKANHead(
             input_dim=dim,
             hidden_dim=mlp_dim,
