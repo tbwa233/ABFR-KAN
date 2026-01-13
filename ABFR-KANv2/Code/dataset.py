@@ -21,20 +21,11 @@ class GDataset(Dataset):
         file_name = self.csv['name'].iloc[index]
         label = self.csv['label'].iloc[index].astype(int)
 
+        # Make sure the paths in the two lines beneath this comment match the data you are expecting to use
         fc_matrix_path = os.path.join(self.fc_matrix_dot, 'FCmatrix_random_iterative', str(file_name), f'fcmatrix.npy')
         position_path = f'./data/subjectwise_position_random_iterative/{file_name}.npy'
-
         
-        """
-        # DEBUG: print which file is being loaded
-        if item == 0:  # only print for the first item (avoids huge spam)
-            print("Loading FC matrix from:", fc_matrix_path)
-            print("Loading position from:", position_path)
-        """
-        
-
         fc_matrix0 = np.load(fc_matrix_path).astype(np.float32)
-        # print("Mean of fc_matrix:", fc_matrix0.mean(), "Std:", fc_matrix0.std())
         fc_matrix = np.abs(fc_matrix0)
         position = np.load(position_path).astype(np.float32)
 
@@ -42,7 +33,7 @@ class GDataset(Dataset):
 
 def get_data_loader(i_fold):
 
-    df = pd.read_csv('data/UM_5fold.csv')
+    df = pd.read_csv('data/UM_5fold.csv') # Make sure the .csv used here matches with the fcmatrix and subjectwise_position files you are using
 
     df = df.reset_index()
     train_idxs = np.where(df['fold'] != i_fold)[0]
