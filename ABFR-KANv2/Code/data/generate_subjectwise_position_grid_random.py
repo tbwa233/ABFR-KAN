@@ -4,15 +4,16 @@ import pandas as pd
 from scipy.io import loadmat
 import numpy as np
 
-
+"""In the line below, make sure the .csv file corresponds with the ABIDE site you want to train on.
+We provide .csv files for the NYU and UM sites, but other sites can be used so long as you provide a .csv file for them."""
 data_fold = pd.read_csv(f'./UM110.csv', skip_blank_lines=True)
 
 for index, row in data_fold.iterrows():
 
     name = row['SUB_ID']
     label = row['DX_GROUP']-1
-    FCMatrix_path = glob(f'/localdisk0/ABFR-KAN/Data_Preparation/1_GridBasedAnchorSelection_RandomPatchSampling/Result_FCandSignal_BasedPatch_Anchor/UM_PatchSize8_112AnchorNum/FCMatrix/UM_1_00{name}_func_preproc.mat')
-    Posi_Signal_path = glob(f'/localdisk0/ABFR-KAN/Data_Preparation/1_GridBasedAnchorSelection_RandomPatchSampling/Result_FCandSignal_BasedPatch_Anchor/UM_PatchSize8_112AnchorNum/Position_and_ROISignals/UM_1_00{name}_func_preproc.mat')
+    FCMatrix_path = glob(f'/path/to/Data_Preparation/1_GridBasedAnchorSelection_RandomPatchSampling/Result_FCandSignal_BasedPatch_Anchor/UM_PatchSize8_112AnchorNum/FCMatrix/UM_1_00{name}_func_preproc.mat')
+    Posi_Signal_path = glob(f'/path/to/Data_Preparation/1_GridBasedAnchorSelection_RandomPatchSampling/Result_FCandSignal_BasedPatch_Anchor/UM_PatchSize8_112AnchorNum/Position_and_ROISignals/UM_1_00{name}_func_preproc.mat')
 
     FCMatrix = loadmat(FCMatrix_path[0])['cc_matrix']
     Posi_Signal = loadmat(Posi_Signal_path[0])['Position_and_ROISignals']
