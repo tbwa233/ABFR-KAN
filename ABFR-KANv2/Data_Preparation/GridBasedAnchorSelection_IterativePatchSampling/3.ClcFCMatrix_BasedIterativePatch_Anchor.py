@@ -1,9 +1,7 @@
-# I wrote this
 import os
 import SimpleITK as sitk
 from scipy import io
 import numpy as np
-
 
 def calc_mean_matrix(fmri_path, GMmask_path, anchor_arr_3d, patch_size):
     fmri_arr = sitk.GetArrayFromImage(sitk.ReadImage(fmri_path))
@@ -80,7 +78,7 @@ patch_size_variations = [8, 12, 16]  # Vary the patch sizes. These can be any va
 
 result_dir = './Result_FCandSignal_BasedPatch_Anchor/NewUM_PatchSize_Variations'
 image_dir = '/localdisk1/Datasets/ABIDE/Sites/UM'
-mask_dir = '/localdisk0/ABFR-KAN/Data_Preparation/template'
+mask_dir = '/path/to/Data_Preparation/template' # Update path to your own template file
 name_list = os.listdir(f'{image_dir}')
 name_list.sort()
 
@@ -147,3 +145,4 @@ os.makedirs(final_result_dir, exist_ok=True)
 io.savemat(os.path.join(final_result_dir, 'Aggregated_FCMatrix.mat'), {'aggregated_fc_matrix': aggregated_fc_matrix})
 io.savemat(os.path.join(final_result_dir, 'Aggregated_Position_Results.mat'),
            {'aggregated_position_results': aggregated_position_results})
+
