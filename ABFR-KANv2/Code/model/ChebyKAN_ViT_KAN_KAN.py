@@ -65,7 +65,7 @@ class Attention(nn.Module):
         return self.to_out(out)
         
 # ----------------------------
-# ChebyKAN FeedForward (FFN)
+# ChebyKAN FeedForward
 # ----------------------------
 class ChebyKANFeedForward(nn.Module):
     def __init__(self, dim, hidden_dim, degree=4):
@@ -193,3 +193,4 @@ class ViT(nn.Module):
 
         x = self.to_latent(x)
         return self.mlp_head(x)
+
