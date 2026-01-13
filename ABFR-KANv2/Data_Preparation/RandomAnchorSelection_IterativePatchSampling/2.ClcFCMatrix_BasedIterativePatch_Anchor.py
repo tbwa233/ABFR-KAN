@@ -1,9 +1,7 @@
-# I wrote this
 import os
 import SimpleITK as sitk
 from scipy import io
 import numpy as np
-
 
 def calc_mean_matrix(fmri_path, GMmask_path, anchor_arr_3d, patch_size):
     fmri_arr = sitk.GetArrayFromImage(sitk.ReadImage(fmri_path))
