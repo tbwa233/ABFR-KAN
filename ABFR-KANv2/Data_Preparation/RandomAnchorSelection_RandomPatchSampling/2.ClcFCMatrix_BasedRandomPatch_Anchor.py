@@ -3,7 +3,6 @@ import SimpleITK as sitk
 from scipy import io
 import numpy as np
 
-
 def calc_mean_matrix(fmri_path, GMmask_path, anchor_arr_3d):
 
     fmri_arr = sitk.GetArrayFromImage(sitk.ReadImage(fmri_path))
@@ -86,7 +85,6 @@ def calc_mean_matrix(fmri_path, GMmask_path, anchor_arr_3d):
     cc_matrix = np.corrcoef(result, anchorresult)
     # print(cc_matrix.shape)
     return np.nan_to_num(cc_matrix), position_add_result
-
 
 result_dir = './Result_FCandSignal_BasedPatch_Anchor/NYU_PatchSize8_112AnchorNum'
 image_dir = '/path/to/image/data' # Follow the instructions in README.md to download the image data
