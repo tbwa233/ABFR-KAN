@@ -6,10 +6,14 @@ from torch import nn
 from einops import rearrange
 from einops.layers.torch import Rearrange
 from .NYU_TopK import TopKPooling
+
+""" Uncomment one of the options below to select your desired KAN variant.
+No changes to the code beyond that are necessary."""
+
 #from ekan import KAN
 #from fastkan import FastKAN as KAN
 #from fasterkan import FasterKAN as KAN
-from wavkan import KAN
+#from wavkan import KAN
 
 # helpers
 def pair(t):
@@ -120,3 +124,4 @@ class ViT(nn.Module):
         x = self.to_latent(x)
 
         return self.mlp_head(x)
+
