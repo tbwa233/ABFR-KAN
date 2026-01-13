@@ -12,7 +12,9 @@ for index, row in data_fold.iterrows():
 
     name = row['SUB_ID']
     label = row['DX_GROUP']-1
+    # Make sure the .mat filenames match your expected files
     FCMatrix_path = glob(f'/path/to/Data_Preparation/1_GridBasedAnchorSelection_RandomPatchSampling/Result_FCandSignal_BasedPatch_Anchor/UM_PatchSize8_112AnchorNum/FCMatrix/UM_1_00{name}_func_preproc.mat')
+    # Make sure the .mat filenames match your expected files
     Posi_Signal_path = glob(f'/path/to/Data_Preparation/1_GridBasedAnchorSelection_RandomPatchSampling/Result_FCandSignal_BasedPatch_Anchor/UM_PatchSize8_112AnchorNum/Position_and_ROISignals/UM_1_00{name}_func_preproc.mat')
 
     FCMatrix = loadmat(FCMatrix_path[0])['cc_matrix']
