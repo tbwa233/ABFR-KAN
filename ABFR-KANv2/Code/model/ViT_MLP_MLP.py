@@ -4,7 +4,6 @@ from einops import rearrange, repeat
 from einops.layers.torch import Rearrange
 from .NYU_TopK import TopKPooling
 
-
 # helpers
 def pair(t):
     return t if isinstance(t, tuple) else (t, t)
